@@ -5,3 +5,15 @@ content-type: application/json
     "name": "Pasche"
 
 }
+###
+POST http://localhost:3003/teachers HTTP/1.1
+content-type: application/json
+
+{   
+    "name": "Palmirinha",
+    "email": "fe@gmail.com",
+    "birth": "24/12/1988",
+    "class_id":"_1t52bknyw56",
+    "expertise":"React"
+
+}
