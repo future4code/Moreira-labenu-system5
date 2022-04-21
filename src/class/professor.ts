@@ -1,21 +1,33 @@
-// import { random_id } from "../tools/idGenerator";
-// import { Expertise } from "../types/types";
-// import { User } from "./user";
+import { Expertise} from "../types/types";
 
-// export class Professor extends User {
-//     constructor(
-//         id: string,
-//         name: string,
-//         email: string,
-//         birth: string,
-//         classId: string,
-//         private expertise: Expertise
+export class Professor {
+  constructor(
+    private id: string,
+    private name: string,
+    private email:string,
+    private birth: string,
+    private class_id: string,
+    public expertise:Expertise,
+    
+  ) {}
 
-//     ){
-//         super(id, name, email, birth, classId)
-//     }
-//     public createProfessor = (name: string, email: string, birth: string, expertise: Expertise): void => {
-//         const id = random_id()
-//         const newProfessor = new Professor(id, name, email, birth, expertise)
-//     }
-// }
+  public getTeacherId = (): string => {
+    return this.id;
+  };
+
+  public getTeacherName = (): string => {
+    return this.name;
+  };
+
+  public getTeacherEmail = (): string => {
+    return this.email;
+  };
+
+  public getTeacherBirth = (): string => {
+    return this.birth;
+  };
+
+  public getTeacherClass_Id = (): string => {
+    return this.class_id;
+  };
+}
