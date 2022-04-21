@@ -1,6 +1,4 @@
-import connection from "../connection";
-import { random_id } from "../tools/idGenerator";
-import { Module, professor, student } from "../types/types";
+import { Module } from "../types/types";
 
 export class EachClass {
   constructor(
@@ -15,9 +13,5 @@ export class EachClass {
 
   public getClassName = (): string => {
     return this.name;
-  };
-
-  public getClassModule = (): Module => {
-    return this.module;
   };
 }
