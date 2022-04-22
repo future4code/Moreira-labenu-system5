@@ -17,6 +17,17 @@ content-type: application/json
 }
 
 ###
+POST http://localhost:3003/students HTTP/1.1
+content-type: application/json
+
+{   
+    "name": "Mateus",
+    "email": "mateus@gmail.com",
+    "birth": "25/04/1989",
+    "class_id":"_abt4dzk5sc0"     
+}  
+
+###
 PATCH  http://localhost:3003/classes/_abt4dzk5sc0 HTTP/1.1
 content-type: application/json
 
