@@ -1,10 +1,9 @@
 import { Request, Response } from "express";
-import { EachClass } from "../../class/eachClass";
 import { Professor } from "../../class/professor";
 import connection from "../../connection";
 import { getExpertiseId } from "../../functions";
 import { random_id } from "../../tools/idGenerator";
-import { Expertise } from "../../types/types";
+
 
 export const createTeacher = async (
   req: Request,
