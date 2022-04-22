@@ -31,3 +31,4 @@ export class Professor {
     return this.class_id;
   };
 }
+

@@ -13,26 +13,32 @@ export const createTeacher = async (
     const { name, email, birth, class_id, expertise } = req.body;
     const id: string = random_id();
     const teacherAndExpertiseId: string = random_id();
-    const formattedBirth = birth.split("/").reverse().join("-")
+    const formattedBirth = birth.split("/").reverse().join("-");
     if (!name || !email || !birth || !class_id || !expertise) {
       throw new Error("Insert all fields.");
     }
 
-    const newTeacher = new Professor(id, name, email, formattedBirth, class_id, expertise);
+    const newTeacher = new Professor(
+      id,
+      name,
+      email,
+      formattedBirth,
+      class_id,
+      expertise
+    );
     await connection("Docente").insert({
       docente_id: newTeacher.getTeacherId(),
       docente_nome: newTeacher.getTeacherName(),
       docente_email: newTeacher.getTeacherEmail(),
       docente_data_nasc: newTeacher.getTeacherBirth(),
-      docente_turma: newTeacher.getTeacherClass_Id()
+      docente_turma: newTeacher.getTeacherClass_Id(),
     });
 
-    const expertiseId = await getExpertiseId(newTeacher.expertise)
+    const expertiseId = await getExpertiseId(newTeacher.expertise);
     await connection("Docente_Especialidade").insert({
       vinculoDocenteEspecialidade_id: teacherAndExpertiseId,
       docente_id: newTeacher.getTeacherId(),
-      especialidade_id: expertiseId
-
+      especialidade_id: expertiseId,
     });
 
     res.status(201).send("Teacher created!");

@@ -6,6 +6,14 @@ export enum Expertise {
     POO = "POO"
 }
 
+// export enum Hobbies {
+//     Assistir_TV = "Assistir TV",
+//     Ler_Livros = "Ler Livros",
+//     Jogar_Futebol = "Jogar Futebol",
+//     Surfar = "Surfar",
+//     Sair_com_Amigas = "Sair com as amigas"
+// }
+
 export enum Module {
     zero = 0,
     one = 1,
@@ -22,7 +30,7 @@ export type student = {
     email: string, 
     birth: string,
     class_id: string,
-    hobbies: string[]
+    hobbies: string []
 }
 export type professor = {
     id: string,
