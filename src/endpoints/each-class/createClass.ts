@@ -19,6 +19,7 @@ export const createClass = async (
       throw new Error('Invalid entry. "Name" must contain letters.');
     }
     const newClass = new EachClass(id, name, Module.zero);
+
     await connection("Turma").insert({
       turma_id: newClass.getClassId(),
       turma_nome: newClass.getClassName(),

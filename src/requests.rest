@@ -2,6 +2,5 @@ POST http://localhost:3003/classes HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Pasche"
-
+    "turma": "dh8dyhasuidhasd"
 }
