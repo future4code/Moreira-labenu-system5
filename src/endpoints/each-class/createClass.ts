@@ -23,7 +23,7 @@ export const createClass = async (
     await connection("Turma").insert({
       turma_id: newClass.getClassId(),
       turma_nome: newClass.getClassName(),
-      turma_modulo: newClass.module
+      turma_modulo: newClass.module,
     });
 
     res.status(201).send("Class created!");
@@ -37,6 +37,7 @@ export const createClass = async (
         break;
       default:
         res.status(500).send("Something bad happened. Please contact support.");
+        break;
     }
   }
 };
