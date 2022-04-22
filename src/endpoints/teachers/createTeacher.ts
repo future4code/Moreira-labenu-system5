@@ -4,6 +4,7 @@ import connection from "../../connection";
 import { getExpertiseId } from "../../functions";
 import { random_id } from "../../tools/idGenerator";
 
+
 export const createTeacher = async (
   req: Request,
   res: Response

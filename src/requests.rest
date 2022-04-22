@@ -9,32 +9,3 @@ POST http://localhost:3003/teachers HTTP/1.1
 content-type: application/json
 
 {   
-    "name": "Palmirinha",
-    "email": "fe@gmail.com",
-    "birth": "24/12/1988",
-    "class_id":"_1t52bknyw56",
-    "expertise":"React"
-}
-
-###
-POST http://localhost:3003/students HTTP/1.1
-content-type: application/json
-
-{   
-    "name": "Mateus",
-    "email": "mateus@gmail.com",
-    "birth": "25/04/1989",
-    "class_id":"_abt4dzk5sc0"     
-}  
-
-###
-PATCH  http://localhost:3003/classes/_abt4dzk5sc0 HTTP/1.1
-content-type: application/json
-
-{
-    "module": 4
-}
-
-###
-GET  http://localhost:3003/classes HTTP/1.1
-content-type: application/json
