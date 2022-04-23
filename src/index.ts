@@ -6,7 +6,6 @@ import { createTeacher } from "./endpoints/teachers/createTeacher";
 import { changeModule } from "./endpoints/each-class/changeModule";
 import { getActiveClasses } from "./endpoints/each-class/getActiveClasses";
 
-
 const app: Express = express();
 app.use(express.json());
 app.use(cors());
@@ -15,13 +14,13 @@ app.use(cors());
 app.post("/classes", createClass);
 
 //Register a professor
-app.post("/teachers",createTeacher);
+app.post("/teachers", createTeacher);
 
 //Get active classes
-app.get("/classes", getActiveClasses)
+app.get("/classes", getActiveClasses);
 
 //Change the module of a class
-app.patch("/classes/:id", changeModule)
+app.patch("/classes/:id", changeModule);
 
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {

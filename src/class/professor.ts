@@ -1,14 +1,13 @@
-import { Expertise} from "../types/types";
+import { Expertise } from "../types/types";
 
 export class Professor {
   constructor(
     private id: string,
     private name: string,
-    private email:string,
+    private email: string,
     private birth: string,
     private class_id: string,
-    public expertise:Expertise,
-    
+    public expertise: Expertise
   ) {}
 
   public getTeacherId = (): string => {
@@ -31,4 +30,3 @@ export class Professor {
     return this.class_id;
   };
 }
-

@@ -15,4 +15,3 @@ export class EachClass {
     return this.name;
   };
 }
-
