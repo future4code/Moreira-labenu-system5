@@ -5,6 +5,8 @@ import { createClass } from "./endpoints/each-class/createClass";
 import { createTeacher } from "./endpoints/teachers/createTeacher";
 import { changeModule } from "./endpoints/each-class/changeModule";
 import { getActiveClasses } from "./endpoints/each-class/getActiveClasses";
+import { createStudent } from "./endpoints/student/createStudent";
+import { getActiveStudents } from "./endpoints/student/getActiveStudents";
 
 const app: Express = express();
 app.use(express.json());
@@ -16,8 +18,14 @@ app.post("/classes", createClass);
 //Register a professor
 app.post("/teachers", createTeacher);
 
+//Register a student
+app.post("/students",createStudent);
+
 //Get active classes
 app.get("/classes", getActiveClasses);
+
+//Get active students
+app.get("/students", getActiveStudents)
 
 //Change the module of a class
 app.patch("/classes/:id", changeModule);
