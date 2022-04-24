@@ -2,7 +2,7 @@
 
 **[PT-BR]**
 
-##Descrição
+#Descrição
 Sistema com funcionalidades básicas referentes a uma escola de programação. Foi utilizada POO a fim de organização e reaproveitamento de código.
 
 ###Tecnologias utilizadas
