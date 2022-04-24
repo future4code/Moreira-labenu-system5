@@ -2,10 +2,11 @@
 
 **[PT-BR]**
 
-####Descrição
+##Descrição
 Sistema com funcionalidades básicas referentes a uma escola de programação. Foi utilizada POO a fim de organização e reaproveitamento de código.
 
 ###Tecnologias utilizadas
+
 [TypeScript](https://www.typescriptlang.org/ "TypeScript")
 
 [Node.js](https://nodejs.org/en/ "Node.js")
@@ -26,10 +27,11 @@ ____
 
 **[EN]**
 
-###Description
+##Description
 System with basic functionalities referring to a programming school. OOP was used in order to organize and reuse code.
 
 ###Technologies used
+
 [TypeScript](https://www.typescriptlang.org/ "TypeScript")
 
 [Node.js](https://nodejs.org/en/ "Node.js")
