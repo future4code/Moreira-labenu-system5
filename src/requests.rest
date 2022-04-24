@@ -1,3 +1,4 @@
+//Create a class
 POST http://localhost:3003/classes HTTP/1.1
 content-type: application/json
 
@@ -5,7 +6,67 @@ content-type: application/json
     "name": "Pasche"
 }
 ###
+//Create a professor
 POST http://localhost:3003/teachers HTTP/1.1
 content-type: application/json
 
 {   
+    "name": "Nathália de Almeida",
+    "email": "nath@labenu.com",
+    "birth": "07/08/1998",
+    "class_id": "_268arfl9k2k",
+    "expertise": "POO"
+}
+###
+//Register a student
+POST http://localhost:3003/students HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Paulo Henrique Ganso",
+    "email": "phganso_@flu.com",
+    "birth": "23/04/1988",
+    "class_id": "_268arfl9k2k",
+    "hobbies": ["Jogar bola!", "Curtir a família."]
+}
+
+###
+//Search for a student
+GET http://localhost:3003/students?name= HTTP/1.1
+content-type: application/json
+###
+
+//Get active classes
+GET http://localhost:3003/classes HTTP/1.1
+content-type: application/json
+###
+
+//List all professors
+GET http://localhost:3003/teachers HTTP/1.1
+content-type: application/json
+
+###
+//Change a class' module
+PATCH http://localhost:3003/classes/:id HTTP/1.1
+content-type: application/json
+
+{
+    "class": "_268arfl9k2k"
+}
+###
+//Change a student's class
+PATCH http://localhost:3003/students/:id HTTP/1.1
+content-type: application/json
+
+{
+    "class": "_268arfid9k2k"
+}
+###
+//Change a professor's class
+PATCH http://localhost:3003/teachers/_1xqpomz4mr3 HTTP/1.1
+content-type: application/json
+
+{
+    "class": "_1t52bknyw56"
+}
+

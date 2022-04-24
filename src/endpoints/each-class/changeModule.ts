@@ -11,7 +11,7 @@ export const changeModule = async (
     const newModule: Module = req.body.module;
 
     if (!newModule) {
-      throw new Error("Please insert a valid module.");
+      throw new Error("Please insert a module.");
     }
 
     if (newModule > 6) {
@@ -25,7 +25,7 @@ export const changeModule = async (
     res.status(200).send("Module successfully updated!");
   } catch (error: any) {
     switch (error.message) {
-      case "Please insert a valid module.":
+      case "Please insert a module.":
         res.status(412).send(error.message);
         break;
       case "There are only 6 modules. Choose from 1 to 6.":

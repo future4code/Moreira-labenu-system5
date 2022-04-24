@@ -1,32 +1,20 @@
+import connection from "../connection";
 import { Expertise } from "../types/types";
+import { User } from "./user";
 
-export class Professor {
+export class Professor extends User {
   constructor(
-    private id: string,
-    private name: string,
-    private email: string,
-    private birth: string,
-    private class_id: string,
-    public expertise: Expertise
-  ) {}
+    id: string,
+    name: string,
+    email: string,
+    birth: string,
+    class_id: string,
+    protected expertise: Expertise
+  ) {
+    super(id, name, email, birth, class_id);
+  }
 
-  public getTeacherId = (): string => {
-    return this.id;
-  };
-
-  public getTeacherName = (): string => {
-    return this.name;
-  };
-
-  public getTeacherEmail = (): string => {
-    return this.email;
-  };
-
-  public getTeacherBirth = (): string => {
-    return this.birth;
-  };
-
-  public getTeacherClass_Id = (): string => {
-    return this.class_id;
+  public getExpertise = (): Expertise => {
+    return this.expertise;
   };
 }

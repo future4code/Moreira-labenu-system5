@@ -1,31 +1,18 @@
+import { User } from "./user";
 
-
-export class Student {
+export class Student extends User {
   constructor(
-    private id: string,
-    private name: string,
-    private email:string,
-    private birth: string,
-    private class_id: string,
-    ) {}
+    id: string,
+    name: string,
+    email: string,
+    birth: string,
+    class_id: string,
+    protected hobbies: string[]
+  ) {
+    super(id, name, email, birth, class_id);
+  }
 
-  public getStudentId = (): string => {
-    return this.id;
-  };
-
-  public getStudentName = (): string => {
-    return this.name;
-  };
-
-  public getStudentEmail = (): string => {
-    return this.email;
-  };
-
-  public getStudentBirth = (): string => {
-    return this.birth;
-  };
-
-  public getStudentClass_Id = (): string => {
-    return this.class_id;
+  public getHobbies = (): string[] => {
+    return this.hobbies;
   };
 }

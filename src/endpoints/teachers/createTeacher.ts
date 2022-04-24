@@ -1,9 +1,8 @@
 import { Request, Response } from "express";
 import { Professor } from "../../class/professor";
 import connection from "../../connection";
-import { getExpertiseId } from "../../functions";
 import { random_id } from "../../tools/idGenerator";
-
+import { Expertise } from "../../types/types";
 
 export const createTeacher = async (
   req: Request,
@@ -13,9 +12,42 @@ export const createTeacher = async (
     const { name, email, birth, class_id, expertise } = req.body;
     const id: string = random_id();
     const teacherAndExpertiseId: string = random_id();
-    const formattedBirth = birth.split("/").reverse().join("-");
+    const formattedBirth: string = birth.split("/").reverse().join("-");
+
     if (!name || !email || !birth || !class_id || !expertise) {
       throw new Error("Insert all fields.");
+    };
+
+    let expertiseId;
+    switch (expertise) {
+      case "JS":
+        expertiseId = 1;
+        break;
+      case "CSS":
+        expertiseId = 2;
+        break;
+      case "React":
+        expertiseId = 3;
+        break;
+      case "Typescript":
+        expertiseId = 4;
+        break;
+      case "POO":
+        expertiseId = 5;
+        break;
+      default:
+        expertiseId = 1;
+        break;
+    }
+
+    const [expertiseVerifier]: Expertise[] = await connection(
+      "Especialidade"
+    ).where("especialidade_nome", expertise);
+
+    if (!expertiseVerifier) {
+      throw new Error(
+        "Select a valid expertise ('CSS', 'JS', 'POO', 'React' or 'Typescript')."
+      );
     }
 
     const newTeacher = new Professor(
@@ -26,28 +58,29 @@ export const createTeacher = async (
       class_id,
       expertise
     );
+
     await connection("Docente").insert({
-      docente_id: newTeacher.getTeacherId(),
-      docente_nome: newTeacher.getTeacherName(),
-      docente_email: newTeacher.getTeacherEmail(),
-      docente_data_nasc: newTeacher.getTeacherBirth(),
-      docente_turma: newTeacher.getTeacherClass_Id(),
+      docente_id: newTeacher.getId(),
+      docente_nome: newTeacher.getName(),
+      docente_email: newTeacher.getEmail(),
+      docente_data_nasc: newTeacher.getBirth(),
+      docente_turma: newTeacher.getClassId(),
     });
 
-    const expertiseId = await getExpertiseId(newTeacher.expertise);
     await connection("Docente_Especialidade").insert({
       vinculoDocenteEspecialidade_id: teacherAndExpertiseId,
-      docente_id: newTeacher.getTeacherId(),
+      docente_id: newTeacher.getId(),
       especialidade_id: expertiseId,
     });
 
     res.status(201).send("Teacher created!");
   } catch (error: any) {
+    console.log(error.message);
     switch (error.message) {
       case "Insert all fields.":
         res.status(412).send(error.message);
         break;
-      case 'Invalid entry. "Name" must contain letters.':
+      case "Select a valid expertise ('CSS', 'JS', 'POO', 'React' or 'Typescript').":
         res.status(412).send(error.message);
         break;
       default:
