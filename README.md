@@ -6,9 +6,13 @@ Sistema com funcionalidades básicas referentes a uma escola de programação. F
 
 ###Tecnologias utilizadas
 [TypeScript](https://www.typescriptlang.org/ "TypeScript")
+
 [Node.js](https://nodejs.org/en/ "Node.js")
+
 [Express](http://expressjs.com/ "Express")
+
 [MySQL](https://www.mysql.com/ "MySQL")
+
 [Knex](http://knexjs.org/ "Knex")
 
 ###Documentação do Postman
