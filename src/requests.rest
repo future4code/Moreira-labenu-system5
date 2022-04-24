@@ -31,7 +31,7 @@ content-type: application/json
 }
 
 ###
-//Search for a student
+//Find a student
 GET http://localhost:3003/students?name= HTTP/1.1
 content-type: application/json
 ###
@@ -51,7 +51,7 @@ PATCH http://localhost:3003/classes/:id HTTP/1.1
 content-type: application/json
 
 {
-    "class": "_268arfl9k2k"
+    "module": "1"
 }
 ###
 //Change a student's class
@@ -63,7 +63,7 @@ content-type: application/json
 }
 ###
 //Change a professor's class
-PATCH http://localhost:3003/teachers/_1xqpomz4mr3 HTTP/1.1
+PATCH http://localhost:3003/teachers/:id HTTP/1.1
 content-type: application/json
 
 {
