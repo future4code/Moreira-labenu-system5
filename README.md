@@ -1,33 +1,43 @@
-## LabenuSystem:
+# LabenuSystem
 
-Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
+**[PT-BR]**
 
-Ele deve possuir, ao menos, as 3 entidades importantes:
+## Descrição
+Sistema com funcionalidades básicas referentes a uma escola de programação. Foi utilizada POO a fim de organização e reaproveitamento de código.
+O usuário pode:
+- Cadastrar turmas, professores e alunos;
+- Listar turmas ativas, professores e buscar aluno pelo nome;
+- Alterar o módulo de uma turma, a turma pela qual o professor especificado é responsável e a turma na qual está inserido o aluno especificado. 
 
-1. Estudantes 
+## Tecnologias utilizadas
+[TypeScript](https://www.typescriptlang.org/ "TypeScript")\
+[Node.js](https://nodejs.org/en/ "Node.js")\
+[Express](http://expressjs.com/ "Express")\
+[MySQL](https://www.mysql.com/ "MySQL")\
+[Knex](http://knexjs.org/ "Knex")
 
-    Representa estudantes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e os principais hobbies dele. 
+## Documentação do Postman
+https://documenter.getpostman.com/view/19294478/UyrBiFh3
 
-2. Docente
 
-    Representa docentes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e todas as especialidades dele. Há 7 especialidades: React, Redux, CSS, Testes, Typescript, Programação Orientada a Objetos e Backend
+____
 
-3. Turma
 
-    Toda turma é composta das seguintes características: id, nome, data de início, data de término, lista de professores responsáveis, uma lista de alunos e módulo atual em que a turma está.
+**[EN]**
 
-    O módulo pode assumir os valores de 1 a 7 ou `undefined`, indicando que as aulas dessa turma ainda não começaram. Para esse exercício, vamos considerar que existam dois tipos de turma: integral ou noturna. Há uma restrição para o nome das turmas noturnas: tem que terminar com `-na-night`.
+## Description
+System with basic functionalities referring to a programming school. OOP was used in order to organize and reuse code.
+The user can:
+- Register classes, professors and students;
+- List active classes, professors and search for student by name;
+- Change the module of a class, the class for which the specified professor is responsible and the class in which the specified student is inserted.
 
-As funcionalidades básicas são:
+## Technologies used
+[TypeScript](https://www.typescriptlang.org/ "TypeScript")\
+[Node.js](https://nodejs.org/en/ "Node.js")\
+[Express](http://expressjs.com/ "Express")\
+[MySQL](https://www.mysql.com/ "MySQL")\
+[Knex](http://knexjs.org/ "Knex")
 
-→ Criar estudante;
-
-→ Criar docente;
-
-→ Criar turma;
-
-→ Adicionar estudante na turma;
-
-→ Adicionar docente na turma;
-
-→ Pegar a idade de algum estudante a partir do id
+## Postman documentation
+https://documenter.getpostman.com/view/19294478/UyrBiFh3
